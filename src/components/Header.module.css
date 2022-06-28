@@ -1,5 +1,15 @@
-export function Header () {
-  return (
-    header
-  )
+.header {
+  position: absolute;
+  height: 200px;
+  left: 0px;
+  right: 0px;
+  top: 14px;
+}
+
+.header img {
+  position: absolute;
+  width: 126px;
+  height: 48px;
+  left: 657px;
+  top: 72px;
 }
