@@ -4,7 +4,7 @@ import AppLogo from '../assets/Logo.svg';
 export function Header () {
   return (
     <header className={styles.header}>
-      <img src={AppLogo} alt="Logotipo do Ignite" />
+      <img src={AppLogo} alt="" />
     </header>
   )
 }

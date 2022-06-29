@@ -9,12 +9,11 @@ import './global.css';
 
 export function App() {
   return (
-    <div>
-     <Header/>
-      <div className={styles.wrapper}> 
-      <NewTask/> 
-      <Tasks/>     
-
+    <div className={styles.wrapper}>
+      <Header/>
+      <div > 
+        <NewTask/> 
+        <Tasks/>     
       </div>      
     </div>
   )

@@ -1,16 +1,13 @@
-.wrapper {
-  max-width: 70rem;
-  margin: 2rem auto;
-  padding: 0 1rem;
-
-  display: grid;
-  grid-template-columns: 256px 1fr;
-  gap: 2rem;
-  align-items: flex-start;
+.wrapper {    
+  position: relative;
+  width: 90rem;
+  height: 64rem;
+  background: #1A1A1A;  
+  
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 90rem) {
 
   html{
     font-size: 87.5%;
