@@ -23,16 +23,13 @@ export function NewTask() {
         <input 
           type="text"
           placeholder="Adicione uma nova tarefa" 
-          value={newTaskText}
           onChange={handleNewTaskChange}
           required
-        />
+        />       
+        <button type="submit">
+          <img src={ButtonImg} alt="" />
+        </button>
       </form>
-      
-      <button className={styles.button} type="submit">
-        <img src={ButtonImg} alt="" />
-      </button>
-    </div>
-    
+    </div>    
   )
 }

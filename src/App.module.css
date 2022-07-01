@@ -1,9 +1,60 @@
 .wrapper {    
-  position: relative;
-  width: 90rem;
-  height: 64rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  
   background: #1A1A1A;  
   
+}
+
+.empty {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 24px;
+  gap: 16px;
+  top: 43px;
+
+  width: 46rem;
+  height: 15.25rem;
+
+  border-top: 1px solid #333333;
+  border-radius: 8px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  
+}
+
+.clipboard {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: url(.png);
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.emptyText {
+  width: 43rem;
+  height: 2,75rem;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.37rem;
+  line-height: 140%;
+  text-align: center;
+  color: #808080;
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
 }
 
 

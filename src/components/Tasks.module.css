@@ -1,13 +1,11 @@
 .tasks {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  min-width: 736px;
 
   padding: 0px;
   gap: 24px;
 
   position: absolute;
-  width: 736px;
   height: 287px;
   left: calc(50% - 736px/2);
   top: 291px;
@@ -19,7 +17,7 @@
   justify-content: space-between;
   align-items: flex-end;
   padding: 0px;
-  gap: 561px;
+  
   width: 46rem;
   height: 1.18rem;
 
@@ -27,27 +25,6 @@
   order: 0;
   align-self: stretch;
   flex-grow: 0;  
-}
-
-.empty {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 64px 24px;
-  gap: 16px;
-
-  width: 46rem;
-  height: 15.25rem;
-
-  border-top: 1px solid #333333;
-  border-radius: 8px;
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
 .created {
@@ -63,16 +40,65 @@
   flex-grow: 0;
 }
 
+.createdTasks {  
+  height: 1.06rem;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.87rem;
+  line-height: 1.06rem;
+
+  color: #4EA8DE;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.createdTasksCounter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  gap: 10px;
+
+  width: 1.56rem;
+  height: 1.18rem;
+
+  background: #333333;
+  border-radius: 999px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.createdTasksCounterText {
+  width: 0.56rem;
+  height: 0.93rem;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 0.93rem;
+  color: #D9D9D9;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
 .done {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
   gap: 8px;
-  width: 6.93rem;
+  width: 8.68rem;
   height: 1.18rem;
   flex: none;
-  order: 1;
+  order: 0;
   flex-grow: 0;
 }
 
@@ -122,150 +148,3 @@
   flex-grow: 0;
 }
 
-.createdTasks {
-  width: 6.62rem;
-  height: 1.06rem;
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.87rem;
-  line-height: 1.06rem;
-
-  color: #4EA8DE;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-.createdTasksCounter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 8px;
-  gap: 10px;
-
-  width: 1.56rem;
-  height: 1.18rem;
-
-  background: #333333;
-  border-radius: 999px;
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
-.createdTasksCounterText {
-  width: 0.56rem;
-  height: 0.93rem;
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.75rem;
-  line-height: 0.93rem;
-  color: #D9D9D9;
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-.clipboard {
-  width: 3.5rem;
-  height: 3.5rem;
-  background: url(.png);
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-.emptyText {
-  width: 43rem;
-  height: 2,75rem;
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.37rem;
-  line-height: 140%;
-  text-align: center;
-  color: #808080;
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
-
-  width: 736px;
-  height: 408px;
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.task {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 16px;
-  gap: 12px;
-
-  width: 736px;
-  height: 72px;
-  background: #262626;
-  border: 1px solid #333333;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
-  border-radius: 8px;
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.check {
-  width: 24px;
-  height: 24px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-.textTask {
-  width: 632px;
-  height: 40px;
-  
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 140%;
-  color: #F2F2F2;
-  flex: none;
-  order: 1;
-  flex-grow: 1;
-}
-
-.trash {
-  width: 24px;
-  height: 24px;
-
-  border-radius: 4px;
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-}
