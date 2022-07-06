@@ -1,36 +1,25 @@
 import styles from './Tasks.module.css';
+import CheckImg from '../assets/check.svg';
+import TrashImg from '../assets/trash.svg';
 
-interface IsComplete {
-  type: boolean;
-}
-
-interface Title {
-  type: 'text';
-  title: Title[];
-}
-
-interface TasksProps {
-  title: string;
-  isComplete: boolean;
-}
-
-export function Tasks({title, isComplete}:TasksProps) {
+export function Tasks({ title }) {
   return (
-    <div className={styles.tasks}>
-      <div className={styles.info}>
-        <div className={styles.created}>
-          <div className={styles.createdTasks}>Tarefas Criadas</div>
-          <div className={styles.createdTasksCounter}>            
-            <div className={styles.createdTasksCounterText}>0</div>
+    <div>
+      <div className={styles.list}>
+        <div className={styles.task}>
+          <div className={styles.check}>
+            <img src={CheckImg} alt="" />
+          </div>
+          <div className={styles.taskText}> 
+            {title.map(line => {
+              return <p key={line.text}>{line.text} </p>
+            })}
+          </div>
+          <div className={styles.trash}>
+            <img src={TrashImg} alt="" />
           </div>
         </div>
-        <div className={styles.done}>
-          <div className={styles.doneTasks}>Concluídas</div>
-          <div className={styles.doneTasksCounter}>
-            <div className={styles.doneTasksCounterText}>0</div>
-          </div>
-        </div>
-      </div>      
+      </div>  
     </div>
   )
-}
+}       
