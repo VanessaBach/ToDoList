@@ -1,8 +1,15 @@
 import styles from './Tasks.module.css';
 import CheckImg from '../assets/check.svg';
 import TrashImg from '../assets/trash.svg';
+import { TaskProps } from '../App';
 
-export function Tasks({ title }) {
+
+export function Tasks({ title, isComplete, id, onDeleteTask}:TaskProps) {
+  
+  function handleDelete() {
+    onDeleteTask(title);
+  }
+
   return (
     <div>
       <div className={styles.list}>
@@ -11,11 +18,9 @@ export function Tasks({ title }) {
             <img src={CheckImg} alt="" />
           </div>
           <div className={styles.taskText}> 
-            {title.map(line => {
-              return <p key={line.text}>{line.text} </p>
-            })}
+           {title}
           </div>
-          <div className={styles.trash}>
+          <div className={styles.trash} onClick={handleDelete}>
             <img src={TrashImg} alt="" />
           </div>
         </div>
