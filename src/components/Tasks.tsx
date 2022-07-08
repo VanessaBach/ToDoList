@@ -1,13 +1,16 @@
 import styles from './Tasks.module.css';
 import CheckImg from '../assets/check.svg';
 import TrashImg from '../assets/trash.svg';
-import { TaskProps } from '../App';
+import { TaskProps} from '../App';
 
+interface TaskComponentProps extends TaskProps {
+  onDeleteTask: (taskToDeleteId: string) => void;
+}
 
-export function Tasks({ title, isComplete, id, onDeleteTask}:TaskProps) {
+export function Tasks({ title, isComplete, id, onDeleteTask}:TaskComponentProps) {
   
   function handleDelete() {
-    onDeleteTask(title);
+    onDeleteTask(id);
   }
 
   return (

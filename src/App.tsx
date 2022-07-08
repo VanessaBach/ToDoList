@@ -11,39 +11,34 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 export interface TaskProps {
   title: string,
   isComplete: boolean,
-  id?: string,  
-  onDeleteTask?: (task: object) => void;
+  id: string,  
 }
 
 export function App() {
 
   const [tasks, setTasks] = useState<TaskProps[]>([])
-  const [newTask, setNewTask ] = useState<TaskProps>({} as TaskProps)
+  const [newTask, setNewTask ] = useState('')
 
   function handleNewTask(event: ChangeEvent<HTMLInputElement>) {
     
-    setNewTask(
-      {
-        title: event.target.value,
-        isComplete: false,
-        id: uuidv4(),        
-      }
-    )
+    setNewTask(event.target.value)
   }
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault()      
-    setTasks(state => [...state, newTask])
+    setTasks(state => [...state, {
+      title: newTask,
+      isComplete: false,
+      id: uuidv4(),
+    }])
   }
 
-  function onDeleteTask(taskToDelete: object) {
+  function onDeleteTask(taskToDeleteId: string) {
     const tasksWithoutDeletedOne = tasks.filter(task => {
-      return task != taskToDelete;
+      return task.id != taskToDeleteId;
     })
     setTasks(tasksWithoutDeletedOne);
-  }
-  
-  
+  }  
 
   return (
       <div className={styles.wrapper}>
@@ -54,7 +49,7 @@ export function App() {
             type="text"
             placeholder="Adicione uma nova tarefa"           
             onChange={handleNewTask}
-            value={newTask.title}
+            value={newTask}
             required
           />       
           <button type="submit">
