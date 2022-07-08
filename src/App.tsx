@@ -61,6 +61,7 @@ export function App() {
       {tasks.map(task => {
         return (        
           <Tasks  
+            id= {task.id}
             key={task.id}
             title={task.title}
             isComplete={task.isComplete}
