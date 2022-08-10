@@ -2,11 +2,13 @@ import { Header } from './components/Header';
 import { Tasks } from './components/Tasks';
 import { Quadro } from './components/Quadro';
 import ButtonImg from './assets/Button.svg';
+import { Info } from './components/Info';
 
 import styles from './App.module.css';
 import './global.css';
 import { v4 as uuidv4 } from 'uuid';
 import { ChangeEvent, FormEvent, useState } from 'react';
+
 
 export interface TaskProps {
   title: string,
@@ -56,7 +58,8 @@ export function App() {
             <img src={ButtonImg} alt="" />
           </button>
         </form>
-      </div>    
+      </div>
+      <Info/>      
       {tasks.length == 0 && <Quadro/>}
       {tasks.map(task => {
         return (        
