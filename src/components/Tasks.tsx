@@ -1,24 +1,31 @@
 import styles from './Tasks.module.css';
-import CheckImg from '../assets/check.svg';
 import TrashImg from '../assets/trash.svg';
 import { TaskProps} from '../App';
 
 interface TaskComponentProps extends TaskProps {
   onDeleteTask: (taskToDeleteId: string) => void;
+  onChangeIsComplete:(changeIsCompleted: boolean) => void;
 }
 
-export function Tasks({ title, isComplete, id, onDeleteTask}:TaskComponentProps) {
+export function Tasks({ title, id, onDeleteTask,  onChangeIsComplete}:TaskComponentProps) {
   
   function handleDelete() {
     onDeleteTask(id);
+  }
+
+  function changeIsComplete() {
+    onChangeIsComplete(false);
   }
 
   return (
     <div>
       <div className={styles.list}>
         <div className={styles.task}>
-          <div className={styles.check}>
-            <img src={CheckImg} alt="" />
+          <div className={styles.check}onClick={changeIsComplete}>
+            <label className="checkboxContainer">
+              <input type="checkbox" />
+              <span className="checkmark"></span>
+            </label>
           </div>
           <div className={styles.taskText}> 
            {title}

@@ -20,7 +20,7 @@ export function App() {
 
   const [tasks, setTasks] = useState<TaskProps[]>([])
   const [newTask, setNewTask ] = useState('')
-
+  
   function handleNewTask(event: ChangeEvent<HTMLInputElement>) {
     
     setNewTask(event.target.value)
@@ -41,6 +41,13 @@ export function App() {
     })
     setTasks(tasksWithoutDeletedOne);
   }  
+
+  function  onChangeIsComplete(changeIsCompleted: boolean) {
+    const tasksCompleted = tasks.map(task => {
+      return changeIsCompleted == true;
+    })
+    setTasks(tasksCompleted);       
+  }
 
   return (
       <div className={styles.wrapper}>
@@ -68,7 +75,8 @@ export function App() {
             key={task.id}
             title={task.title}
             isComplete={task.isComplete}
-            onDeleteTask={onDeleteTask}                   
+            onDeleteTask={onDeleteTask}
+            onChangeIsComplete = {onChangeIsComplete}                   
           />
         )
       })}        
